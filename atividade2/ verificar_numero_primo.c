@@ -1,31 +1,29 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdlib.h>
 
-bool Primo(int num) {
-    if (num <= 1) {
-        return false;
+int main(int argc, char* argv[]){
+
+    int num = atoi(argv[1]);
+
+    if(num <= 1){
+        printf("false");
+        exit(0);
     }
-    for (int i = 2; i * i <= num; i++) {
-        if (num % i == 0) {
-            return false;
+
+    if((num != 2) && (num % 2 == 0)){
+        printf("false");
+        exit(0);
+    }
+
+    for(int i = 3; i < num; i += 2){
+        if(num % i == 0){
+            printf("false");
+            exit(0);
         }
     }
-    return true;
+    
+    printf("true");
+
+    exit(0);
 }
 
-int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        printf("Uso: %s <numero>\n", argv[0]);
-        return 1;
-    }
-
-    int numero = atoi(argv[1]); 
-
-    if (Primo(numero)) {
-        printf("true\n");
-    } else {
-        printf("false\n");
-    }
-
-    return 0;
-}
