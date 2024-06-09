@@ -3,7 +3,6 @@ typedef struct StackNode{
     struct StackNode* next;
 } StackNode;
 
-
 void push(StackNode** root, char data);
 char pop(StackNode** root);
 char peek(StackNode* root);
