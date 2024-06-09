@@ -4,14 +4,11 @@
 #include "stack.h"
 
 void push(StackNode** root, char data){
-
     StackNode* stackNode = malloc(sizeof(StackNode));
     stackNode->data = data;
     stackNode->next = *root;
     *root = stackNode;
-
 }
-
 
 char pop(StackNode** root){
     if(isEmpty(*root)){
@@ -25,7 +22,7 @@ char pop(StackNode** root){
 }
 
 char peek(StackNode* root){
-    if(isEmpty(*root)){
+    if(isEmpty(root)){
         return CHAR_MIN;
     }
     return root->data;
@@ -38,7 +35,7 @@ int isEmpty(StackNode* root){
 void display(StackNode* root){
     StackNode* tmp = root;
     while(tmp != NULL){
-        printf("%c ->", tmp->data);
+        printf("%c -> ", tmp->data);
         tmp = tmp->next;
     }
     printf("NULL\n");
