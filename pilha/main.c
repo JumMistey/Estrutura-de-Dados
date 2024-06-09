@@ -12,15 +12,14 @@ int main(int argc, char* argv[]){
 
     display(top);
 
-    printf("%c ", pop(&top));
+    printf("%c \n", pop(&top));
 
     display(top);
 
-    printf("%c ", peek(top));
+    printf("%c \n", peek(top));
 
     printf("%c ", pop(&top));
     printf("%c ", pop(&top));
-
 
     exit(0);
 }
